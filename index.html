@@ -118,15 +118,15 @@ div.vertical {
 
 
 	$("#loginbutton").on("click", function() {
-		loadPage($("passover").val());
+		loadPage($("#password").val());
 	});
-	$("passover").keypress(function(e) {
+	$("#password").keypress(function(e) {
 		if (e.which == 13) {
 
-			loadPage($("passover").val());
+			loadPage($("#password").val());
 		}
 	});
-	$("passover").focus();
+	$("#password").focus();
 
 	</script>
 
