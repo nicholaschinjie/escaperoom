@@ -71,7 +71,7 @@ div.vertical {
 		<div class="horizontal">
 			<div class="vertical">
 				<div class="box">
-					<input style="margin: 16px; text-align: center;" id="passover" type="password" placeholder="password" /> <br />
+					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
 					<button id="loginbutton" type="button">Enter</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>
 				</div>
@@ -118,15 +118,15 @@ div.vertical {
 
 
 	$("#loginbutton").on("click", function() {
-		loadPage($("#password").val());
+		loadPage($("passover").val());
 	});
-	$("#password").keypress(function(e) {
+	$("passover").keypress(function(e) {
 		if (e.which == 13) {
 
-			loadPage($("#password").val());
+			loadPage($("passover").val());
 		}
 	});
-	$("#password").focus();
+	$("passover").focus();
 
 	</script>
 
