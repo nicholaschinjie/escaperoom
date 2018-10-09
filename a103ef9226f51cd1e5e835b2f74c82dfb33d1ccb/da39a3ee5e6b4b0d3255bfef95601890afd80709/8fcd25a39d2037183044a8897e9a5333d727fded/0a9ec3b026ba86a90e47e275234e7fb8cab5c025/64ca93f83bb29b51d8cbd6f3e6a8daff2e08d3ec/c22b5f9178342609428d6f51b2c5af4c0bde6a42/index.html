@@ -87,77 +87,11 @@ div.vertical {
 
 			<div class="jumbotron">
 				<div class="container">
-					<h1>What is the password?</h1>
-					<p>It turns out Jesus took three men into the Garden of Gethsemane. One of them have info, the question is who?</p>
-
-					<div id="loginbox" class="lightbox" >
-						<div class="horizontal">
-							<div class="vertical">
-								<div class="jumbotron">
-									<div class="container">
-                    <h2>x,y</h2>
-										<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
-										<button id="loginbutton" type="button">Enter</button>
-										<p id="wrongPassword" style="display: none">wrong password</p>
-										<br>
-										<br>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<h1>Congratulations!</h1>
+					<p>You are innocent</p>
 				</div>
 			</div>
 
-
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
-
-	 <script type="text/javascript" src="https://cdn.rawgit.com/chrisveness/crypto/master/sha1.js"></script>
-
-	<script type="text/javascript">
-	"use strict";
-
-
-	function loadPage(pwd) {
-
-		var hash= pwd;
-		hash= Sha1.hash(pwd);
-		var url= hash + "/index.html";
-
-		$.ajax({
-			url : url,
-			dataType : "html",
-			success : function(data) {
-
-				window.location= url;
-
-			},
-			error : function(xhr, ajaxOptions, thrownError) {
-
-
-				parent.location.hash= hash;
-
-				//$("#wrongPassword").show();
-				$("#password").attr("placeholder","wrong password");
-				$("#password").val("");
-			}
-		});
-	}
-
-
-	$("#loginbutton").on("click", function() {
-		loadPage($("#password").val());
-	});
-	$("#password").keypress(function(e) {
-		if (e.which == 13) {
-
-			loadPage($("#password").val());
-		}
-	});
-	$("#password").focus();
-
-	</script>
 
 </body>
 </html>
